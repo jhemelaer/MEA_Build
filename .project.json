@@ -1,0 +1,28 @@
+{
+	"dataBinding": {
+		"/webapp/view/MasterPage1.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/DetailPage1.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/MasterPage2.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/DetailPage2.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/DetailPage3.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/DetailPage4.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/DetailPage5.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/Dialog1.view.xml": {
+			"entitySet": ""
+		}
+	}
+}

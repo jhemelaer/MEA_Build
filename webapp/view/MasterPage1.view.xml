@@ -1,0 +1,58 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.mRv3.controller.MasterPage1" xmlns="sap.m" xmlns:f="sap.f">
+	<Page title="Leden" showHeader="true" showFooter="true" showNavButton="false">
+		<content>
+			<List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
+				growingThreshold="20" growingScrollToLoad="true" visible="true">
+				<infoToolbar/>
+				<headerToolbar>
+					<Toolbar enabled="true" visible="true" width="" design="Solid">
+						<content>
+							<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<items>
+					<ObjectListItem intro="" title="" number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false">
+						<attributes>
+							<ObjectAttribute text="" active="false" visible="true"/>
+							<ObjectAttribute text="voornaam + achternaam" active="false" visible="true"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus text="" state="None" visible="true"/>
+						</firstStatus>
+						<secondStatus/>
+					</ObjectListItem>
+					<ObjectListItem intro="" title="" number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false">
+						<attributes>
+							<ObjectAttribute text="" active="false" visible="true"/>
+							<ObjectAttribute text="voornaam + achternaam" active="false" visible="true"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus text="" state="None" visible="true"/>
+						</firstStatus>
+						<secondStatus/>
+					</ObjectListItem>
+					<ObjectListItem intro="" title="" number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false">
+						<attributes>
+							<ObjectAttribute text="" active="false" visible="true"/>
+							<ObjectAttribute text="voornaam + achternaam" active="false" visible="true"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus text="" state="None" visible="true"/>
+						</firstStatus>
+						<secondStatus/>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<f:Avatar src="sap-icon://add" initials="" displayShape="Circle" displaySize="S" imageFitType="Cover"/>
+					<Text text="lid toevoegen" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+	</Page>
+</mvc:View>

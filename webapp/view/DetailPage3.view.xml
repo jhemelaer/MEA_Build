@@ -1,0 +1,77 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.mRv3.controller.DetailPage3" xmlns="sap.m"
+	xmlns:chart="sap.chart" xmlns:data="sap.chart.data">
+	<Page title="Detail Page" showHeader="true" showFooter="true" showNavButton="false">
+		<content>
+			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Transparent" upperCase="false" visible="true"
+				selectedKey="Ok">
+				<items>
+					<IconTabFilter icon="sap-icon://business-card" iconColor="Positive" text="Leden" count="" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+						<content/>
+					</IconTabFilter>
+					<IconTabSeparator icon="" iconDensityAware="false"/>
+					<IconTabFilter icon="sap-icon://hint" iconColor="Neutral" text="projecten" count="3" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+						<content/>
+					</IconTabFilter>
+					<IconTabSeparator icon="" iconDensityAware="false"/>
+					<IconTabFilter icon="sap-icon://vertical-bar-chart" iconColor="Neutral" text="statistieken" count="3" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+						<content/>
+					</IconTabFilter>
+					<IconTabSeparator icon="" iconDensityAware="false"/>
+					<IconTabFilter icon="sap-icon://hint" iconColor="Default" text="tasks" count="" design="Vertical" showAll="false" textDirection="Inherit"
+						enabled="true" visible="true" iconDensityAware="false">
+						<content>
+							<Text text="Content goes here ..." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator icon="" iconDensityAware="false"/>
+				</items>
+				<content/>
+			</IconTabBar>
+			<ObjectHeader intro="Intro." title="Item" icon="sap-icon://product" number="1,000" numberUnit="USD" numberState="None" titleActive="false"
+				backgroundDesign="Translucent" condensed="false" visible="true">
+				<attributes/>
+				<statuses/>
+				<markers/>
+			</ObjectHeader>
+			<chart:Chart id="sap_IconTabBar_Page_0-content-sap_chart_PieChart-1542914971284" width="100%" height="450px" visibleDimensions="__id"
+				visibleMeasures="mea0" chartType="pie" selectionMode="Single" uiConfig="{}"
+				vizProperties="{plotArea:{dataLabel:{visible: true,hideWhenOverlap:true}}}">
+				<chart:dimensions>
+					<data:Dimension name="__id" label="Country" role="category" textProperty="dim0"/>
+				</chart:dimensions>
+				<chart:measures>
+					<data:Measure name="mea0" label="Profit" role="axis2"/>
+				</chart:measures>
+			</chart:Chart>
+			<ObjectHeader intro="Intro." title="Item" icon="sap-icon://product" number="1,000" numberUnit="USD" numberState="None" titleActive="false"
+				backgroundDesign="Translucent" condensed="false" visible="true">
+				<attributes/>
+				<statuses/>
+				<markers/>
+			</ObjectHeader>
+			<chart:Chart id="sap_IconTabBar_Page_0-content-sap_chart_ColumnChart-1542915070003" width="100%" height="450px" visibleDimensions="__id"
+				visibleMeasures="mea0" chartType="column" selectionMode="Single" uiConfig="{}"
+				vizProperties="{plotArea:{dataLabel:{visible: true,hideWhenOverlap:true}}}">
+				<chart:dimensions>
+					<data:Dimension name="__id" label="Country" role="category" textProperty="dim0"/>
+				</chart:dimensions>
+				<chart:measures>
+					<data:Measure name="mea0" label="Profit" role="axis2"/>
+				</chart:measures>
+			</chart:Chart>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+	</Page>
+</mvc:View>
