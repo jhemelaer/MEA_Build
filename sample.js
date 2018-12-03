@@ -9,6 +9,8 @@
  * and the SAP River RDE Developer Guide.
  * 
  */
+ 
+ // test commit
 function sample() {
 	var projectName = "MEA_Flexso";
 }
