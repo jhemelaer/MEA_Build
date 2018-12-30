@@ -12,7 +12,15 @@
 		},
 		"ach": "ach",
 		"resources": "resources.json",
-		"dataSources": {},
+		"dataSources": {
+			"Flexso": {
+				"uri": "/destinations/Flexso/sap/opu/odata/SAP/YXM_MVJ_ODATA_FLEXSO_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		},
 		"sourceTemplate": {
 			"id": "sap.ui.ui5-template-plugin.2masterdetail",
 			"version": "1.32.5"
