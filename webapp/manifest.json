@@ -2,7 +2,7 @@
 	"_version": "1.8.0",
 	"sap.app": {
 		"_version": "1.3.0",
-		"id": "com.sap.build.standard.mRv3",
+		"id": "com.sap.build.standard.mRv4",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -12,15 +12,7 @@
 		},
 		"ach": "ach",
 		"resources": "resources.json",
-		"dataSources": {
-			"Flexso": {
-				"uri": "/destinations/Flexso/sap/opu/odata/SAP/YXM_MVJ_ODATA_FLEXSO_SRV/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0"
-				}
-			}
-		},
+		"dataSources": {},
 		"sourceTemplate": {
 			"id": "sap.ui.ui5-template-plugin.2masterdetail",
 			"version": "1.32.5"
@@ -51,7 +43,7 @@
 	"sap.ui5": {
 		"_version": "1.3.0",
 		"rootView": {
-			"viewName": "com.sap.build.standard.mRv3.view.App",
+			"viewName": "com.sap.build.standard.mRv4.view.App",
 			"type": "XML",
 			"async": false,
 			"id": "app"
@@ -72,16 +64,13 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"uri": "i18n/i18n.properties"
-			},
-		"" : {
-			"dataSource": "Flexso"
-		}
+			}
 		},
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "com.sap.build.standard.mRv3.view",
+				"viewPath": "com.sap.build.standard.mRv4.view",
 				"controlId": "idAppControl",
 				"clearTarget": false,
 				"controlAggregation": "detailPages",
@@ -98,21 +87,21 @@
 					"controlAggregation": "masterPages",
 					"viewName": "MasterPage1",
 					"viewId": "MasterPage1",
-					"viewLevel": 5,
+					"viewLevel": 1,
 					"transition": "slide"
 				},
 				"DetailPage1": {
 					"controlAggregation": "detailPages",
 					"viewName": "DetailPage1",
 					"viewId": "DetailPage1",
-					"viewLevel": 1,
+					"viewLevel": 3,
 					"transition": "slide"
 				},
-				"MasterPage2": {
-					"controlAggregation": "masterPages",
-					"viewName": "MasterPage2",
-					"viewId": "MasterPage2",
-					"viewLevel": 3,
+				"DetailPage2": {
+					"controlAggregation": "detailPages",
+					"viewName": "DetailPage2",
+					"viewId": "DetailPage2",
+					"viewLevel": 1,
 					"transition": "slide"
 				},
 				"DetailPage3": {
@@ -126,13 +115,6 @@
 					"controlAggregation": "detailPages",
 					"viewName": "DetailPage4",
 					"viewId": "DetailPage4",
-					"viewLevel": 1,
-					"transition": "slide"
-				},
-				"DetailPage5": {
-					"controlAggregation": "detailPages",
-					"viewName": "DetailPage5",
-					"viewId": "DetailPage5",
 					"viewLevel": 2,
 					"transition": "slide"
 				}
@@ -141,7 +123,7 @@
 				"pattern": "MasterPage1",
 				"name": "MasterPage1",
 				"target": [
-					"DetailPage1",
+					"DetailPage4",
 					"MasterPage1"
 				]
 			}, {
@@ -152,17 +134,17 @@
 					"DetailPage1"
 				]
 			}, {
-				"pattern": "MasterPage2",
-				"name": "MasterPage2",
+				"pattern": "MasterPage1/DetailPage2",
+				"name": "DetailPage2",
 				"target": [
-					"DetailPage3",
-					"MasterPage2"
+					"MasterPage1",
+					"DetailPage2"
 				]
 			}, {
-				"pattern": "MasterPage2/DetailPage3",
+				"pattern": "MasterPage1/DetailPage3",
 				"name": "DetailPage3",
 				"target": [
-					"MasterPage2",
+					"MasterPage1",
 					"DetailPage3"
 				]
 			}, {
@@ -171,13 +153,6 @@
 				"target": [
 					"MasterPage1",
 					"DetailPage4"
-				]
-			}, {
-				"pattern": "MasterPage1/DetailPage5",
-				"name": "DetailPage5",
-				"target": [
-					"MasterPage1",
-					"DetailPage5"
 				]
 			}, {
 				"pattern": "",

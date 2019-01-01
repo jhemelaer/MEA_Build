@@ -1,8 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"com/sap/build/standard/mRv3/model/models",
-	"com/sap/build/standard/mRv3/controller/ListSelector",
+	"com/sap/build/standard/mRv4/model/models",
+	"com/sap/build/standard/mRv4/controller/ListSelector",
 	"./model/errorHandling"
 ], function (UIComponent, Device, models, ListSelector, errorHandling) {
 	"use strict";
@@ -11,7 +11,7 @@ sap.ui.define([
 
 	};
 
-	return UIComponent.extend("com.sap.build.standard.mRv3.Component", {
+	return UIComponent.extend("com.sap.build.standard.mRv4.Component", {
 
 		metadata: {
 			manifest: "json"
