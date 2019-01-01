@@ -134,7 +134,7 @@
 	                                    <StandardListItem icon="sap-icon://employee-lookup" title="lid" description="" info="" infoState="Success" type="Navigation" selected="false" visible="true"/>
 	                                    <StandardListItem icon="sap-icon://employee-lookup" title="lid" description="" info="" infoState="Error" type="Navigation" selected="false" visible="true"/>
 	                                </items>
-                            </List>
+                            	</List>
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
