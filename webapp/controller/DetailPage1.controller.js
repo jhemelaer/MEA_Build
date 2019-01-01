@@ -1,16 +1,28 @@
 sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
+	"./Dialog2", "./Dialog3", "./Dialog1",
 	"./utilities",
 	"sap/ui/core/routing/History"
-], function (BaseController, MessageBox, Utilities, History) {
+], function (BaseController, MessageBox, Dialog2, Dialog3, Dialog1, Utilities, History) {
 	"use strict";
 
-	return BaseController.extend("com.sap.build.standard.mRv3.controller.DetailPage1", {
+	return BaseController.extend("com.sap.build.standard.mRv4.controller.DetailPage1", {
 		handleRouteMatched: function (oEvent) {
-			var sAppId = "App5bf6e3903fdbca0111856adf";
+			var sAppId = "App5c0fc78059fdbb598f2a39fd";
 
 			var oParams = {};
 
+			if (sap.ui.Device.system.desktop) {
+
+				this._oRootView = this.getOwnerComponent().getAggregation("rootControl");
+				this._oRootView.getController().setMode(sap.m.SplitAppMode.StretchCompressMode);
+
+			} else {
+
+				this._oRootView = this.getOwnerComponent().getAggregation("rootControl");
+				this._oRootView.getController().setMode(sap.m.SplitAppMode.StretchCompressMode);
+
+			}
 			if (oEvent.mParameters.data.context) {
 				this.sContext = oEvent.mParameters.data.context;
 
@@ -41,38 +53,62 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				this.getView().bindObject(oPath);
 			}
 
-			this.aRadioButtonGroupIds = [
-				"sap_IconTabBar_Page_0-content-build_simple_form_Form-1542907483665-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-4-fields-sap_m_RadioButtonGroup-1542907622730"
-			];
-			this.handleRadioButtonGroupsSelectedIndex();
+		},
+		_onObjectAttributePress: function () {
+
+			var sDialogName = "Dialog2";
+			this.mDialogs = this.mDialogs || {};
+			var oDialog = this.mDialogs[sDialogName];
+
+			if (!oDialog) {
+				oDialog = new Dialog2(this.getView());
+				this.mDialogs[sDialogName] = oDialog;
+
+				// For navigation.
+				oDialog.setRouter(this.oRouter);
+			}
+			oDialog.open();
 
 		},
-		handleRadioButtonGroupsSelectedIndex: function () {
-			var that = this;
-			this.aRadioButtonGroupIds.forEach(function (sRadioButtonGroupId) {
-				var oRadioButtonGroup = that.byId(sRadioButtonGroupId);
-				var oButtonsBinding = oRadioButtonGroup ? oRadioButtonGroup.getBinding("buttons") : undefined;
-				if (oButtonsBinding) {
-					var oSelectedIndexBinding = oRadioButtonGroup.getBinding("selectedIndex");
-					var iSelectedIndex = oRadioButtonGroup.getSelectedIndex();
-					oButtonsBinding.attachEventOnce("change", function () {
-						if (oSelectedIndexBinding) {
-							oSelectedIndexBinding.refresh(true);
-						} else {
-							oRadioButtonGroup.setSelectedIndex(iSelectedIndex);
-						}
-					});
-				}
-			});
+		_onObjectAttributePress1: function () {
+
+			var sDialogName = "Dialog1";
+			this.mDialogs = this.mDialogs || {};
+			var oDialog = this.mDialogs[sDialogName];
+
+			if (!oDialog) {
+				oDialog = new Dialog1(this.getView());
+				this.mDialogs[sDialogName] = oDialog;
+
+				// For navigation.
+				oDialog.setRouter(this.oRouter);
+			}
+			oDialog.open();
 
 		},
-		_onIconTabBarSelect: function (oEvent) {
+		_onObjectAttributePress2: function () {
+
+			var sDialogName = "Dialog3";
+			this.mDialogs = this.mDialogs || {};
+			var oDialog = this.mDialogs[sDialogName];
+
+			if (!oDialog) {
+				oDialog = new Dialog3(this.getView());
+				this.mDialogs[sDialogName] = oDialog;
+
+				// For navigation.
+				oDialog.setRouter(this.oRouter);
+			}
+			oDialog.open();
+
+		},
+		_onObjectListItemPress: function (oEvent) {
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
 			return new Promise(function (fnResolve) {
 
-				this.doNavigate("MasterPage1", oBindingContext, fnResolve, "");
+				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
 			}.bind(this)).catch(function (err) {
 				if (err !== undefined) {
 					MessageBox.error(err.message);
@@ -135,50 +171,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
-		convertTextToIndexFormatter: function (sTextValue) {
-			var oRadioButtonGroup = this.byId(
-				"sap_IconTabBar_Page_0-content-build_simple_form_Form-1542907483665-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-4-fields-sap_m_RadioButtonGroup-1542907622730"
-			);
-			var oButtonsBindingInfo = oRadioButtonGroup.getBindingInfo("buttons");
-			if (oButtonsBindingInfo && oButtonsBindingInfo.binding) {
-				// look up index in bound context
-				var sTextBindingPath = oButtonsBindingInfo.template.getBindingPath("text");
-				return oButtonsBindingInfo.binding.getContexts(oButtonsBindingInfo.startIndex, oButtonsBindingInfo.length).findIndex(function (
-					oButtonContext) {
-					return oButtonContext.getProperty(sTextBindingPath) === sTextValue;
-				});
-			} else {
-				// look up index in static items
-				return oRadioButtonGroup.getButtons().findIndex(function (oButton) {
-					return oButton.getText() === sTextValue;
-				});
-			}
-
-		},
-		_onRadioButtonGroupSelect: function () {
-
-		},
-		_onCustomListItemPress: function (oEvent) {
+		_onObjectListItemPress1: function (oEvent) {
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
 			return new Promise(function (fnResolve) {
 
-				this.doNavigate("MasterPage2", oBindingContext, fnResolve, "");
-			}.bind(this)).catch(function (err) {
-				if (err !== undefined) {
-					MessageBox.error(err.message);
-				}
-			});
-
-		},
-		_onObjectListItemPress: function (oEvent) {
-
-			var oBindingContext = oEvent.getSource().getBindingContext();
-
-			return new Promise(function (fnResolve) {
-
-				this.doNavigate("DetailPage5", oBindingContext, fnResolve, "");
+				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
 			}.bind(this)).catch(function (err) {
 				if (err !== undefined) {
 					MessageBox.error(err.message);
@@ -269,13 +268,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oView.setModel(oModel, "staticDataModel");
 			self.oBindingParameters = {};
 
-			oData[
-				"sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_ColumnChart-1543267691371"
-			] = {};
+			oData["sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946"] = {};
 
-			oData[
-				"sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_ColumnChart-1543267691371"
-			]["data"] = [{
+			oData["sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946"]["data"] = [{
 				"dim0": "India",
 				"mea0": "296",
 				"__id": 0
@@ -297,48 +292,19 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				"__id": 4
 			}];
 
-			self.oBindingParameters[
-				'sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_ColumnChart-1543267691371'
-			] = {
-				"path": "/sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_ColumnChart-1543267691371/data",
+			self.oBindingParameters['sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946'] = {
+				"path": "/sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946/data",
 				"model": "staticDataModel",
 				"parameters": {}
 			};
 
-			oData[
-				"sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_PieChart-1543267728470"
-			] = {};
-
-			oData[
-				"sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_PieChart-1543267728470"
-			]["data"] = [{
-				"dim0": "India",
-				"mea0": "296",
-				"__id": 0
-			}, {
-				"dim0": "Canada",
-				"mea0": "133",
-				"__id": 1
-			}, {
-				"dim0": "USA",
-				"mea0": "489",
-				"__id": 2
-			}, {
-				"dim0": "Japan",
-				"mea0": "270",
-				"__id": 3
-			}, {
-				"dim0": "Germany",
-				"mea0": "350",
-				"__id": 4
-			}];
-
-			self.oBindingParameters[
-				'sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_PieChart-1543267728470'
-			] = {
-				"path": "/sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_PieChart-1543267728470/data",
-				"model": "staticDataModel",
-				"parameters": {}
+			oData["sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946"]["vizProperties"] = {
+				"plotArea": {
+					"dataLabel": {
+						"visible": true,
+						"hideWhenOverlap": true
+					}
+				}
 			};
 
 			oView.getModel("staticDataModel").setData(oData, true);
@@ -354,16 +320,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				return oValueToFormat;
 			}
 
-			var aDimensions = oView.byId(
-				"sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_ColumnChart-1543267691371"
-			).getDimensions();
-			aDimensions.forEach(function (oDimension) {
-				oDimension.setTextFormatter(dateDimensionFormatter);
-			});
-
-			var aDimensions = oView.byId(
-				"sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_PieChart-1543267728470"
-			).getDimensions();
+			var aDimensions = oView.byId("sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946").getDimensions();
 			aDimensions.forEach(function (oDimension) {
 				oDimension.setTextFormatter(dateDimensionFormatter);
 			});
@@ -376,19 +333,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oBindingParameters = this.oBindingParameters,
 				oView = this.getView();
 
-			oChart = oView.byId(
-				"sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_ColumnChart-1543267691371"
-			);
-			oChart.bindData(oBindingParameters[
-				'sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_ColumnChart-1543267691371'
-			]);
-
-			oChart = oView.byId(
-				"sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_PieChart-1543267728470"
-			);
-			oChart.bindData(oBindingParameters[
-				'sap_IconTabBar_Page_0-content-sap_m_IconTabBar-1542915748829-items-sap_m_IconTabFilter-5-content-sap_chart_PieChart-1543267728470'
-			]);
+			oChart = oView.byId("sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946");
+			oChart.bindData(oBindingParameters['sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946']);
 
 		}
 	});
