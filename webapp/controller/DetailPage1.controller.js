@@ -3,11 +3,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"./Dialog2", "./Dialog3", "./Dialog1",
 	"./utilities",
 	"sap/ui/core/routing/History"
-], function (BaseController, MessageBox, Dialog2, Dialog3, Dialog1, Utilities, History) {
+], function(BaseController, MessageBox, Dialog2, Dialog3, Dialog1, Utilities, History) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.mRv4.controller.DetailPage1", {
-		handleRouteMatched: function (oEvent) {
+		handleRouteMatched: function(oEvent) {
 			var sAppId = "App5c0fc78059fdbb598f2a39fd";
 
 			var oParams = {};
@@ -28,7 +28,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			} else {
 				if (this.getOwnerComponent().getComponentData()) {
-					var patternConvert = function (oParam) {
+					var patternConvert = function(oParam) {
 						if (Object.keys(oParam).length !== 0) {
 							for (var prop in oParam) {
 								if (prop !== "sourcePrototype") {
@@ -54,7 +54,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
-		_onObjectAttributePress: function () {
+		_onObjectAttributePress: function() {
 
 			var sDialogName = "Dialog2";
 			this.mDialogs = this.mDialogs || {};
@@ -70,7 +70,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oDialog.open();
 
 		},
-		_onObjectAttributePress1: function () {
+		_onObjectAttributePress1: function() {
 
 			var sDialogName = "Dialog1";
 			this.mDialogs = this.mDialogs || {};
@@ -86,7 +86,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oDialog.open();
 
 		},
-		_onObjectAttributePress2: function () {
+		_onObjectAttributePress2: function() {
 
 			var sDialogName = "Dialog3";
 			this.mDialogs = this.mDialogs || {};
@@ -102,21 +102,21 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oDialog.open();
 
 		},
-		_onObjectListItemPress: function (oEvent) {
+		_onRowPress: function(oEvent) {
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
-			return new Promise(function (fnResolve) {
+			return new Promise(function(fnResolve) {
 
 				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
-			}.bind(this)).catch(function (err) {
+			}.bind(this)).catch(function(err) {
 				if (err !== undefined) {
 					MessageBox.error(err.message);
 				}
 			});
 
 		},
-		doNavigate: function (sRouteName, oBindingContext, fnPromiseResolve, sViaRelation) {
+		doNavigate: function(sRouteName, oBindingContext, fnPromiseResolve, sViaRelation) {
 			var sPath = (oBindingContext) ? oBindingContext.getPath() : null;
 			var oModel = (oBindingContext) ? oBindingContext.getModel() : null;
 
@@ -131,8 +131,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var sMasterContext = this.sMasterContext ? this.sMasterContext : sPath;
 
 			if (sEntityNameSet !== null) {
-				sNavigationPropertyName = sViaRelation || this.getOwnerComponent().getNavigationPropertyForNavigationWithContext(sEntityNameSet,
-					sRouteName);
+				sNavigationPropertyName = sViaRelation || this.getOwnerComponent().getNavigationPropertyForNavigationWithContext(sEntityNameSet, sRouteName);
 			}
 			if (sNavigationPropertyName !== null && sNavigationPropertyName !== undefined) {
 				if (sNavigationPropertyName === "") {
@@ -141,7 +140,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						masterContext: sMasterContext
 					}, false);
 				} else {
-					oModel.createBindingContext(sNavigationPropertyName, oBindingContext, null, function (bindingContext) {
+					oModel.createBindingContext(sNavigationPropertyName, oBindingContext, null, function(bindingContext) {
 						if (bindingContext) {
 							sPath = bindingContext.getPath();
 							if (sPath.substring(0, 1) === "/") {
@@ -171,21 +170,35 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
-		_onObjectListItemPress1: function (oEvent) {
+		_onRowPress1: function(oEvent) {
 
 			var oBindingContext = oEvent.getSource().getBindingContext();
 
-			return new Promise(function (fnResolve) {
+			return new Promise(function(fnResolve) {
 
 				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
-			}.bind(this)).catch(function (err) {
+			}.bind(this)).catch(function(err) {
 				if (err !== undefined) {
 					MessageBox.error(err.message);
 				}
 			});
 
 		},
-		applyFiltersAndSorters: function (sControlId, sAggregationName, chartBindingInfo) {
+		_onRowPress2: function(oEvent) {
+
+			var oBindingContext = oEvent.getSource().getBindingContext();
+
+			return new Promise(function(fnResolve) {
+
+				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
+			}.bind(this)).catch(function(err) {
+				if (err !== undefined) {
+					MessageBox.error(err.message);
+				}
+			});
+
+		},
+		applyFiltersAndSorters: function(sControlId, sAggregationName, chartBindingInfo) {
 			if (chartBindingInfo) {
 				var oBindingInfo = chartBindingInfo;
 			} else {
@@ -203,7 +216,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
-		updateBindingOptions: function (sCollectionId, oBindingData, sSourceId) {
+		updateBindingOptions: function(sCollectionId, oBindingData, sSourceId) {
 			this.mBindingOptions = this.mBindingOptions || {};
 			this.mBindingOptions[sCollectionId] = this.mBindingOptions[sCollectionId] || {};
 
@@ -243,17 +256,17 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			};
 
 		},
-		onInit: function () {
+		onInit: function() {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("DetailPage1").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 			var oView = this.getView();
 			oView.addEventDelegate({
-				onBeforeShow: function () {
+				onBeforeShow: function() {
 					if (sap.ui.Device.system.phone) {
 						var oPage = oView.getContent()[0];
 						if (oPage.getShowNavButton && !oPage.getShowNavButton()) {
 							oPage.setShowNavButton(true);
-							oPage.attachNavButtonPress(function () {
+							oPage.attachNavButtonPress(function() {
 								this.oRouter.navTo("", {}, true);
 							}.bind(this));
 						}
@@ -321,12 +334,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 			var aDimensions = oView.byId("sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946").getDimensions();
-			aDimensions.forEach(function (oDimension) {
+			aDimensions.forEach(function(oDimension) {
 				oDimension.setTextFormatter(dateDimensionFormatter);
 			});
 
 		},
-		onAfterRendering: function () {
+		onAfterRendering: function() {
 
 			var oChart,
 				self = this,
