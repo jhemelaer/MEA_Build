@@ -5,11 +5,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 ], function (BaseController, MessageBox, Utilities, History) {
 	"use strict";
 
-	return BaseController.extend("com.sap.build.standard.mRv3.controller.DetailPage5", {
+	return BaseController.extend("com.sap.build.standard.mRv4.controller.DetailPage2", {
 		handleRouteMatched: function (oEvent) {
-			var sAppId = "App5bf6e3903fdbca0111856adf";
+			var sAppId = "App5c0fc78059fdbb598f2a39fd";
 
 			var oParams = {};
+
+			this._oRootView = this.getOwnerComponent().getAggregation("rootControl");
+			this._oRootView.getController().setMode(sap.m.SplitAppMode.HideMode);
 
 			if (oEvent.mParameters.data.context) {
 				this.sContext = oEvent.mParameters.data.context;
@@ -42,7 +45,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 			this.aRadioButtonGroupIds = [
-				"sap_Responsive_Page_0-content-build_simple_form_Form-1542919392619-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-4-fields-sap_m_RadioButtonGroup-1542919688969"
+				"sap_Responsive_Page_0-content-build_simple_form_Form-1544914141797-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-3-fields-sap_m_RadioButtonGroup-1544914212360"
 			];
 			this.handleRadioButtonGroupsSelectedIndex();
 
@@ -68,7 +71,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		},
 		convertTextToIndexFormatter: function (sTextValue) {
 			var oRadioButtonGroup = this.byId(
-				"sap_Responsive_Page_0-content-build_simple_form_Form-1542919392619-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-4-fields-sap_m_RadioButtonGroup-1542919688969"
+				"sap_Responsive_Page_0-content-build_simple_form_Form-1544914141797-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-3-fields-sap_m_RadioButtonGroup-1544914212360"
 			);
 			var oButtonsBindingInfo = oRadioButtonGroup.getBindingInfo("buttons");
 			if (oButtonsBindingInfo && oButtonsBindingInfo.binding) {
@@ -91,7 +94,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		},
 		onInit: function () {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			this.oRouter.getTarget("DetailPage5").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
+			this.oRouter.getTarget("DetailPage2").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 			var oView = this.getView();
 			oView.addEventDelegate({
 				onBeforeShow: function () {
@@ -100,7 +103,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						if (oPage.getShowNavButton && !oPage.getShowNavButton()) {
 							oPage.setShowNavButton(true);
 							oPage.attachNavButtonPress(function () {
-								this.oRouter.navTo("DetailPage1", {}, true);
+								this.oRouter.navTo("", {}, true);
 							}.bind(this));
 						}
 					}

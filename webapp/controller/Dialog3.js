@@ -5,10 +5,10 @@ sap.ui.define([
 	"sap/ui/core/routing/History"
 ], function (ManagedObject, MessageBox, Utilities, History) {
 
-	return ManagedObject.extend("com.sap.build.standard.mRv4.controller.Dialog1", {
+	return ManagedObject.extend("com.sap.build.standard.mRv4.controller.Dialog3", {
 		constructor: function (oView) {
 			this._oView = oView;
-			this._oControl = sap.ui.xmlfragment(oView.getId(), "com.sap.build.standard.mRv4.view.Dialog1", this);
+			this._oControl = sap.ui.xmlfragment(oView.getId(), "com.sap.build.standard.mRv4.view.Dialog3", this);
 			this._bInit = false;
 		},
 

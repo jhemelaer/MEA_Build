@@ -3,14 +3,14 @@ sap.ui.define([
 ], function (BaseObject) {
 	"use strict";
 
-	return BaseObject.extend("com.sap.build.standard.mRv3.model.ListSelector", {
+	return BaseObject.extend("com.sap.build.standard.mRv4.model.ListSelector", {
 
 		/**
 		 * Provides a convenience API for selecting list items. All the functions will wait until the initial load of the a List passed to the instance by the setBoundMasterList
 		 * function.
 		 * @class
 		 * @public
-		 * @alias com.sap.build.standard.mRv3.model.ListSelector
+		 * @alias com.sap.build.standard.mRv4.model.ListSelector
 		 */
 
 		constructor: function () {
@@ -112,7 +112,7 @@ sap.ui.define([
 		 * is called.
 		 * @param {function} fnFunction the function to be executed when the list fires a selection change event
 		 * @param {function} oListener the listener object
-		 * @return {com.sap.build.standard.mRv3.model.ListSelector} the list selector object for method chaining
+		 * @return {com.sap.build.standard.mRv4.model.ListSelector} the list selector object for method chaining
 		 * @public
 		 */
 		attachListSelectionChange: function (fnFunction, oListener) {
@@ -128,7 +128,7 @@ sap.ui.define([
 		 * is called.
 		 * @param {function} fnFunction the function to be executed when the list fires a selection change event
 		 * @param {function} oListener the listener object
-		 * @return {com.sap.build.standard.mRv3.model.ListSelector} the list selector object for method chaining
+		 * @return {com.sap.build.standard.mRv4.model.ListSelector} the list selector object for method chaining
 		 * @public
 		 */
 		detachListSelectionChange: function (fnFunction, oListener) {

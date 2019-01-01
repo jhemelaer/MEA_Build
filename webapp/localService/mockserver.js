@@ -865,7 +865,7 @@ sap.ui.define([
 		();
 
 	var oMockServer,
-		_sAppModulePath = "com.sap.build.standard.mRv3/";
+		_sAppModulePath = "com.sap.build.standard.mRv4/";
 	return {
 
 		/**

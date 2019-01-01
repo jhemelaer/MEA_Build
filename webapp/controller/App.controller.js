@@ -1,11 +1,11 @@
 sap.ui.define([
-	"com/sap/build/standard/mRv3/controller/BaseController",
+	"com/sap/build/standard/mRv4/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History"
 ], function (BaseController, JSONModel, History) {
 	"use strict";
 
-	return BaseController.extend("com.sap.build.standard.mRv3.controller.App", {
+	return BaseController.extend("com.sap.build.standard.mRv4.controller.App", {
 
 		onInit: function () {
 			var oViewModel,
