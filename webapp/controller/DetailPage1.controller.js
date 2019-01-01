@@ -339,6 +339,21 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
+		
+		
+		_onTableItemPress: function(oEvent) {
+
+			var oBindingContext = oEvent.getParameter("listItem").getBindingContext();
+
+			return new Promise(function(fnResolve) {
+				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
+			}.bind(this)).catch(function(err) {
+				if (err !== undefined) {
+					MessageBox.error(err.message);
+				}
+			});
+
+		}, 
 		onAfterRendering: function() {
 
 			var oChart,
