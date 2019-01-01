@@ -1,311 +1,124 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.mRv3.controller.DetailPage3" xmlns="sap.m"
-	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:chart="sap.chart" xmlns:data="sap.chart.data">
-	<Page title="Detail Page" showHeader="true" showFooter="true" showNavButton="false">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.mRv4.controller.DetailPage3" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page showHeader="true" title="Responsive Page Title" showFooter="true" showNavButton="true">
 		<content>
-			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Transparent" upperCase="false" visible="true"
-				selectedKey="Ok">
-				<items>
-					<IconTabFilter icon="sap-icon://business-card" iconColor="Positive" text="Leden" count="" design="Vertical" showAll="false"
-						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
-						<content>
-							<ObjectHeader intro="" title="Leden" number="" numberUnit="" numberState="None" titleActive="false" backgroundDesign="Translucent"
-								condensed="false" visible="true">
-								<attributes>
-									<ObjectAttribute text="add lid" active="true" visible="true"/>
-								</attributes>
-								<statuses/>
-								<markers/>
-							</ObjectHeader>
-							<List mode="None" width="100%" headerText="" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
-								growingThreshold="20" growingScrollToLoad="true" visible="true">
-								<infoToolbar/>
-								<headerToolbar>
-									<Toolbar enabled="true" visible="true" width="" design="Solid">
-										<content>
-											<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
-										</content>
-									</Toolbar>
-								</headerToolbar>
-								<items>
-									<CustomListItem type="Active" selected="false" visible="true" press="_onCustomListItemPress">
-										<content>
-											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceAround" renderType="Div"
-												visible="true" displayInline="false">
-												<items>
-													<core:Icon src="sap-icon://employee-lookup" size="28px" height="48px" width="48px" visible="true"/>
-													<Label text="Vincent Wathelet" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-													<Label text="Developer" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</items>
-												<layoutData/>
-											</HBox>
-										</content>
-									</CustomListItem>
-									<CustomListItem type="Active" selected="false" visible="true">
-										<content>
-											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceAround" renderType="Div"
-												visible="true" displayInline="false">
-												<items>
-													<core:Icon src="sap-icon://employee-lookup" size="28px" height="48px" width="48px" visible="true"/>
-													<Label text="Vincent Wathelet" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-													<Label text="Developer" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</items>
-												<layoutData/>
-											</HBox>
-										</content>
-									</CustomListItem>
-									<CustomListItem type="Active" selected="false" visible="true">
-										<content>
-											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceAround" renderType="Div"
-												visible="true" displayInline="false">
-												<items>
-													<core:Icon src="sap-icon://employee-lookup" size="28px" height="48px" width="48px" visible="true"/>
-													<Label text="Vincent Wathelet" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-													<Label text="Developer" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</items>
-												<layoutData/>
-											</HBox>
-										</content>
-									</CustomListItem>
-									<CustomListItem type="Active" selected="false" visible="true">
-										<content>
-											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceAround" renderType="Div"
-												visible="true" displayInline="false">
-												<items>
-													<core:Icon src="sap-icon://employee-lookup" size="28px" height="48px" width="48px" visible="true"/>
-													<Label text="Vincent Wathelet" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-													<Label text="Developer" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</items>
-												<layoutData/>
-											</HBox>
-										</content>
-									</CustomListItem>
-									<CustomListItem type="Active" selected="false" visible="true">
-										<content>
-											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceAround" renderType="Div"
-												visible="true" displayInline="false">
-												<items>
-													<core:Icon src="sap-icon://employee-lookup" size="28px" height="48px" width="48px" visible="true"/>
-													<Label text="Vincent Wathelet" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-													<Label text="Developer" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</items>
-												<layoutData/>
-											</HBox>
-										</content>
-									</CustomListItem>
-									<CustomListItem type="Active" selected="false" visible="true">
-										<content>
-											<HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceAround" renderType="Div"
-												visible="true" displayInline="false">
-												<items>
-													<core:Icon src="sap-icon://employee-lookup" size="28px" height="48px" width="48px" visible="true"/>
-													<Label text="Jordi Hemelaer" design="Standard" width="100%" required="false" textAlign="Center" textDirection="Inherit" visible="true"/>
-													<Label text="Project Manager" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</items>
-												<layoutData/>
-											</HBox>
-										</content>
-									</CustomListItem>
-								</items>
-							</List>
-						</content>
-					</IconTabFilter>
-					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://hint" iconColor="Neutral" text="projecten" count="3" design="Vertical" showAll="false"
-						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
-						<content>
-							<ObjectHeader intro="" title="project" number="" numberUnit="" numberState="None" titleActive="false" backgroundDesign="Translucent"
-								condensed="false" visible="true">
-								<attributes/>
-								<statuses/>
-								<markers/>
-							</ObjectHeader>
-							<form:Form width="100%" editable="true" visible="true">
-								<form:title/>
-								<form:formContainers>
-									<form:FormContainer visible="true">
-										<form:formElements>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="id" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</form:label>
-												<form:fields>
-													<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="naam" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</form:label>
-												<form:fields>
-													<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="manager" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</form:label>
-												<form:fields>
-													<ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
-														<items>
-															<core:Item text="Item" enabled="true" key="Item"/>
-															<core:Item text="Item" enabled="true" key="Item"/>
-															<core:Item text="Item" enabled="true" key="Item"/>
-														</items>
-													</ComboBox>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="omschrijving" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</form:label>
-												<form:fields>
-													<TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" visible="true"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="beginDatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</form:label>
-												<form:fields>
-													<DatePicker width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="eindDatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</form:label>
-												<form:fields>
-													<DatePicker width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
-												</form:fields>
-											</form:FormElement>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="active" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</form:label>
-												<form:fields>
-													<Switch state="false" customTextOff="Off" customTextOn="On" type="Default" enabled="true" visible="true"/>
-												</form:fields>
-											</form:FormElement>
-										</form:formElements>
-										<form:title/>
-									</form:FormContainer>
-								</form:formContainers>
-								<form:layout>
-									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
-								</form:layout>
-							</form:Form>
-							<OverflowToolbar width="100%" height="46px" design="Solid" enabled="true" visible="true">
-								<content>
-									<ToolbarSpacer width=""/>
-									<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-									<Button text="Edit" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-									<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-								</content>
-							</OverflowToolbar>
-						</content>
-					</IconTabFilter>
-					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://vertical-bar-chart" iconColor="Neutral" text="statistieken" count="3" design="Vertical" showAll="false"
-						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
-						<content>
-							<ObjectHeader intro="Intro." title="Item" icon="sap-icon://product" number="1,000" numberUnit="USD" numberState="None" titleActive="false"
-								backgroundDesign="Translucent" condensed="false" visible="true">
-								<attributes/>
-								<statuses/>
-								<markers/>
-							</ObjectHeader>
-							<chart:Chart id="sap_IconTabBar_Page_0-content-sap_chart_ColumnChart-1542915070003" width="100%" height="450px" visibleDimensions="__id"
-								visibleMeasures="mea0" chartType="column" selectionMode="Single" uiConfig="{}"
-								vizProperties="{plotArea:{dataLabel:{visible: true,hideWhenOverlap:true}}}">
-								<chart:dimensions>
-									<data:Dimension name="__id" label="Country" role="category" textProperty="dim0"/>
-								</chart:dimensions>
-								<chart:measures>
-									<data:Measure name="mea0" label="Profit" role="axis2"/>
-								</chart:measures>
-							</chart:Chart>
-							<ObjectHeader intro="Intro." title="Item" icon="sap-icon://product" number="1,000" numberUnit="USD" numberState="None" titleActive="false"
-								backgroundDesign="Translucent" condensed="false" visible="true">
-								<attributes/>
-								<statuses/>
-								<markers/>
-							</ObjectHeader>
-							<chart:Chart id="sap_IconTabBar_Page_0-content-sap_chart_PieChart-1542914971284" width="100%" height="450px" visibleDimensions="__id"
-								visibleMeasures="mea0" chartType="pie" selectionMode="Single" uiConfig="{}"
-								vizProperties="{plotArea:{dataLabel:{visible: true,hideWhenOverlap:true}}}">
-								<chart:dimensions>
-									<data:Dimension name="__id" label="Country" role="category" textProperty="dim0"/>
-								</chart:dimensions>
-								<chart:measures>
-									<data:Measure name="mea0" label="Profit" role="axis2"/>
-								</chart:measures>
-							</chart:Chart>
-							<OverflowToolbar width="100%" height="46px" design="Solid" enabled="true" visible="true">
-								<content>
-									<ToolbarSpacer width=""/>
-									<Button text="Export" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-									<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
-								</content>
-							</OverflowToolbar>
-						</content>
-					</IconTabFilter>
-					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://hint" iconColor="Default" text="tasks" count="" design="Vertical" showAll="false" textDirection="Inherit"
-						enabled="true" visible="true" iconDensityAware="false">
-						<content>
-							<ObjectHeader intro="" title="Tasks" number="" numberUnit="" numberState="None" titleActive="false" backgroundDesign="Translucent"
-								condensed="false" visible="true">
-								<attributes>
-									<ObjectAttribute title="" text="Add Item" active="false" visible="true"/>
-								</attributes>
-								<statuses/>
-								<markers/>
-							</ObjectHeader>
-							<ObjectListItem intro="" title="Task ...." number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false">
-								<attributes>
-									<ObjectAttribute title="id" text="1" active="false" visible="true"/>
-									<ObjectAttribute title="deadline" text="21/12/2018" active="false" visible="true"/>
-									<ObjectAttribute title="responsible" text="person1" active="false" visible="true"/>
-									<ObjectAttribute title="desc" text="zefzefzefzeffzeze" active="false" visible="true"/>
-									<ObjectAttribute title="status" text="open" active="false" visible="true"/>
-								</attributes>
-								<firstStatus/>
-								<secondStatus/>
-							</ObjectListItem>
-							<ObjectListItem intro="" title="Task ...." number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false">
-								<attributes>
-									<ObjectAttribute title="id" text="1" active="false" visible="true"/>
-									<ObjectAttribute title="deadline" text="21/12/2018" active="false" visible="true"/>
-									<ObjectAttribute title="responsible" text="person1" active="false" visible="true"/>
-									<ObjectAttribute title="desc" text="zefzefzefzeffzeze" active="false" visible="true"/>
-									<ObjectAttribute title="status" text="open" active="false" visible="true"/>
-								</attributes>
-								<firstStatus/>
-								<secondStatus/>
-							</ObjectListItem>
-							<ObjectListItem intro="" title="Task ...." number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false">
-								<attributes>
-									<ObjectAttribute title="id" text="1" active="false" visible="true"/>
-									<ObjectAttribute title="deadline" text="21/12/2018" active="false" visible="true"/>
-									<ObjectAttribute title="responsible" text="person1" active="false" visible="true"/>
-									<ObjectAttribute title="desc" text="zefzefzefzeffzeze" active="false" visible="true"/>
-									<ObjectAttribute title="status" text="open" active="false" visible="true"/>
-								</attributes>
-								<firstStatus/>
-								<secondStatus/>
-							</ObjectListItem>
-						</content>
-					</IconTabFilter>
-					<IconTabSeparator icon="" iconDensityAware="false"/>
-				</items>
-				<content/>
-			</IconTabBar>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title>
+					<core:Title text="info Taak" level="Auto"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="responsible" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+										<items>
+											<core:Item text="Item" enabled="true" key="Item"/>
+											<core:Item text="Item" enabled="true" key="Item"/>
+											<core:Item text="Item" enabled="true" key="Item"/>
+										</items>
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="desc" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="deadline" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<DatePicker width="auto" displayFormat="short" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title>
+					<core:Title text="Beoordeling" level="Auto"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="status" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<RadioButtonGroup
+										id="sap_Responsive_Page_0-content-build_simple_form_Form-1544917525143-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-1-fields-sap_m_RadioButtonGroup-1544917697714"
+										columns="8" selectedIndex="0" valueState="None" width="auto" editable="true" enabled="true" textDirection="Inherit"
+										select="_onRadioButtonGroupSelect">
+										<buttons>
+											<RadioButton text="open" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+											<RadioButton text="success" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+											<RadioButton text="incomplete" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+											<RadioButton text="unresolved" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+											<RadioButton text="onhold" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+										</buttons>
+									</RadioButtonGroup>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="score" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<RatingIndicator value="0" maxValue="5" visualMode="Half" enabled="true" visible="true" editable="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="feedback" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
 		</content>
 		<footer>
 			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
-				<content/>
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="edit" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="delete" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Save" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
 			</OverflowToolbar>
 		</footer>
 		<headerContent/>
+		<subHeader/>
+		<customHeader/>
 	</Page>
 </mvc:View>
