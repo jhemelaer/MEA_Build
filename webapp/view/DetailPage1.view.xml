@@ -5,7 +5,7 @@
 			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
 				selectedKey="Ok">
 				<items>
-					<IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="informatie" count="" design="Vertical" showAll="false"
+					<IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="{i18n>informatie}" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<ObjectHeader intro="" title="Project 1" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
@@ -23,7 +23,7 @@
 										<form:formElements>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="id" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>idProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
@@ -31,7 +31,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="titel" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>titelProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
@@ -39,7 +39,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="omschrijving" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>omschrijvingProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" visible="true"/>
@@ -47,7 +47,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="beginDatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>beginDatumProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<DatePicker width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
@@ -55,7 +55,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="eindDatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>eindDatumProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<DatePicker width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
@@ -63,7 +63,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="Active" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>ActiveProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<Switch state="false" customTextOff="Off" customTextOn="On" type="Default" enabled="true" visible="true"/>
@@ -102,20 +102,20 @@
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://employee" iconColor="Neutral" text="leden" count="" design="Vertical" showAll="false"
+					<IconTabFilter icon="sap-icon://employee" iconColor="Neutral" text="{i18n>leden}" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<ObjectHeader intro="" title="Leden" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
+							<ObjectHeader intro="" title="{i18n>ledenTitle}" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
 								condensed="false" visible="true">
 								<attributes>
-									<ObjectAttribute text="Add lid" active="true" visible="true" press="_onObjectAttributePress"/>
-									<ObjectAttribute text="Add existing lid" active="true" visible="true" press="_onObjectAttributePress1"/>
+									<ObjectAttribute text="{i18n>nieuwlidToevoegen}" active="true" visible="true" press="_onObjectAttributePress"/>
+									<ObjectAttribute text="{i18n>existinglidToevoegen}" active="true" visible="true" press="_onObjectAttributePress1"/>
 								</attributes>
 								<statuses/>
 								<markers/>
 							</ObjectHeader>
 							<List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
-								growingThreshold="20" growingScrollToLoad="true" visible="true">
+								growingThreshold="20" growingScrollToLoad="true" visible="true" itemPress="_onStandardListItemPress">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -142,19 +142,19 @@
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://task" iconColor="Neutral" text="task" count="" design="Vertical" showAll="false" textDirection="Inherit"
+					<IconTabFilter icon="sap-icon://task" iconColor="Neutral" text="{i18n>taak}" count="" design="Vertical" showAll="false" textDirection="Inherit"
 						enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<ObjectHeader intro="" title="Tasks" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
+							<ObjectHeader intro="" title="{i18n>takenTitle}" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
 								condensed="false" visible="true">
 								<attributes>
-									<ObjectAttribute text="Add task" active="true" visible="true" press="_onObjectAttributePress2"/>
+									<ObjectAttribute text="{i18n>nieuwlidToevoegen}" active="true" visible="true" press="_onObjectAttributePress2"/>
 								</attributes>
 								<statuses/>
 								<markers/>
 							</ObjectHeader>
-							<List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
-								growingThreshold="20" growingScrollToLoad="true" visible="true">
+							<Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
+								class="sapUiResponsiveMargin" itemPress="_onTableItemPress">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -163,62 +163,83 @@
 									</Toolbar>
 								</infoToolbar>
 								<headerToolbar>
-									<Toolbar enabled="true" visible="true" width="" design="Solid">
+									<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
 										<content>
-											<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+											<Title text="Taken(3)" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+											<ToolbarSpacer width=""/>
+											<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false"/>
+											<OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false"/>
+											<OverflowToolbarButton text="Group" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false"/>
+											<OverflowToolbarButton text="Settings" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true"
+												visible="true" iconDensityAware="false"/>
 										</content>
-									</Toolbar>
+									</OverflowToolbar>
 								</headerToolbar>
+								<columns>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>tableId}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>tablenaamTaak}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>tabledeadlineTaak}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>tabletaakVerantwoordelijke}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="{i18n>tabletaakStatus}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+								</columns>
 								<items>
-									<ObjectListItem intro="" title="Task ..." number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false"
-										press="_onObjectListItemPress">
-										<attributes>
-											<ObjectAttribute title="id" text="1" active="false" visible="true"/>
-											<ObjectAttribute title="deadline" text="21/12/2018" active="false" visible="true"/>
-											<ObjectAttribute title="responsible" text="person1" active="false" visible="true"/>
-											<ObjectAttribute title="desc" text="ezfzefzefzefzef" active="false" visible="true"/>
-											<ObjectAttribute title="status" text="open" active="false" visible="true"/>
-										</attributes>
-										<firstStatus>
-											<ObjectStatus text="" state="None" visible="true"/>
-										</firstStatus>
-										<secondStatus>
-											<ObjectStatus text="" state="None" visible="true"/>
-										</secondStatus>
-									</ObjectListItem>
-									<ObjectListItem intro="" title="Task ..." number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false"
-										press="_onObjectListItemPress1">
-										<attributes>
-											<ObjectAttribute title="id" text="1" active="false" visible="true"/>
-											<ObjectAttribute title="deadline" text="21/12/2018" active="false" visible="true"/>
-											<ObjectAttribute title="responsible" text="person1" active="false" visible="true"/>
-											<ObjectAttribute title="desc" text="ezfzefzefzefzef" active="false" visible="true"/>
-											<ObjectAttribute title="status" text="open" active="false" visible="true"/>
-										</attributes>
-										<firstStatus>
-											<ObjectStatus text="" state="None" visible="true"/>
-										</firstStatus>
-										<secondStatus>
-											<ObjectStatus text="" state="None" visible="true"/>
-										</secondStatus>
-									</ObjectListItem>
-									<ObjectListItem intro="" title="Task ..." number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false">
-										<attributes>
-											<ObjectAttribute title="id" text="1" active="false" visible="true"/>
-											<ObjectAttribute title="deadline" text="21/12/2018" active="false" visible="true"/>
-											<ObjectAttribute title="responsible" text="person1" active="false" visible="true"/>
-											<ObjectAttribute title="desc" text="ezfzefzefzefzef" active="false" visible="true"/>
-											<ObjectAttribute title="status" text="open" active="false" visible="true"/>
-										</attributes>
-										<firstStatus>
-											<ObjectStatus text="" state="None" visible="true"/>
-										</firstStatus>
-										<secondStatus>
-											<ObjectStatus text="" state="None" visible="true"/>
-										</secondStatus>
-									</ObjectListItem>
+									<ColumnListItem type="Active">
+										<cells>
+											<Text text="1" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="tabellen maken" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="01/01/2019" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="michiel" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="open" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem type="Active">
+										<cells>
+											<Text text="2" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="data exporteren" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="01/01/2019" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="michiel" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="open" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem type="Active">
+										<cells>
+											<Text text="3" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="i18n aanmaken" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="01/01/2019" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="jordi" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="open" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</cells>
+									</ColumnListItem>
 								</items>
-							</List>
+							</Table>
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>

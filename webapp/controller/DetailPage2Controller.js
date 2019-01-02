@@ -69,6 +69,29 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
+		_onPageNavButtonPress: function () {
+			var oHistory = History.getInstance();
+			var sPreviousHash = oHistory.getPreviousHash();
+			var oQueryParams = this.getQueryParameters(window.location);
+
+			if (sPreviousHash !== undefined || oQueryParams.navBackToLaunchpad) {
+				window.history.go(-1);
+			} else {
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("default", true);
+			}
+
+		},
+		getQueryParameters: function (oLocation) {
+			var oQuery = {};
+			var aParams = oLocation.search.substring(1).split("&");
+			for (var i = 0; i < aParams.length; i++) {
+				var aPair = aParams[i].split("=");
+				oQuery[aPair[0]] = decodeURIComponent(aPair[1]);
+			}
+			return oQuery;
+
+		},
 		convertTextToIndexFormatter: function (sTextValue) {
 			var oRadioButtonGroup = this.byId(
 				"sap_Responsive_Page_0-content-build_simple_form_Form-1544914141797-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-3-fields-sap_m_RadioButtonGroup-1544914212360"
@@ -103,7 +126,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 						if (oPage.getShowNavButton && !oPage.getShowNavButton()) {
 							oPage.setShowNavButton(true);
 							oPage.attachNavButtonPress(function () {
-								this.oRouter.navTo("", {}, true);
+								this.oRouter.navTo("DetailPage1", {}, true);
 							}.bind(this));
 						}
 					}

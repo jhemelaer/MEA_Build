@@ -203,6 +203,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("MasterPage1").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 
-		}
+		},
+		 naarNederlands: function () {
+		 	sap.ui.getCore().getConfiguration().setLanguage( "ne" );
+		 },
+		 
+		 naarEngles: function () {
+		 	sap.ui.getCore().getConfiguration().setLanguage( "de" );
+		 },
 	});
 }, /* bExport= */ true);

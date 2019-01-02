@@ -12,28 +12,13 @@
 					<IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="kies leden" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<List mode="None" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
-								growingThreshold="20" growingScrollToLoad="true">
-								<infoToolbar>
-									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
-										<content>
-											<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-										</content>
-									</Toolbar>
-								</infoToolbar>
-								<headerToolbar>
-									<Toolbar enabled="true" visible="false" width="" design="Solid">
-										<content>
-											<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
-										</content>
-									</Toolbar>
-								</headerToolbar>
+							<MultiComboBox editable="true" enabled="true" width="auto" valueState="None" maxWidth="100%">
 								<items>
-									<DisplayListItem label="Naam lid" value="" visible="true" type="Inactive" selected="false"/>
-									<DisplayListItem label="naam lid" value="" visible="true" type="Inactive" selected="false"/>
-									<DisplayListItem label="naam lid" value="" visible="true" type="Inactive" selected="false"/>
+									<core:Item text="Item" enabled="true" key="Item"/>
+									<core:Item text="Item" enabled="true" key="Item"/>
+									<core:Item text="Item" enabled="true" key="Item"/>
 								</items>
-							</List>
+							</MultiComboBox>
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>

@@ -1,77 +1,88 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.mRv4.controller.Dialog1" xmlns="sap.m"
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.mRv4.controller.Dialog2" xmlns="sap.m"
 	xmlns:form="sap.ui.layout.form">
-	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Kies leden" type="Standard"
-		verticalScrolling="true">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Add lid" type="Standard" verticalScrolling="true">
 		<content>
-			<Breadcrumbs currentLocationText="">
-				<links/>
-			</Breadcrumbs>
-			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
-				selectedKey="Ok">
-				<items>
-					<IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="kies leden" count="" design="Vertical" showAll="false"
-						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
-						<content>
-							<List mode="None" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
-								growingThreshold="20" growingScrollToLoad="true">
-								<infoToolbar>
-									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
-										<content>
-											<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-										</content>
-									</Toolbar>
-								</infoToolbar>
-								<headerToolbar>
-									<Toolbar enabled="true" visible="false" width="" design="Solid">
-										<content>
-											<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
-										</content>
-									</Toolbar>
-								</headerToolbar>
-								<items>
-									<DisplayListItem label="Naam lid" value="" visible="true" type="Inactive" selected="false"/>
-									<DisplayListItem label="naam lid" value="" visible="true" type="Inactive" selected="false"/>
-									<DisplayListItem label="naam lid" value="" visible="true" type="Inactive" selected="false"/>
-								</items>
-							</List>
-						</content>
-					</IconTabFilter>
-					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://switch-classes" iconColor="Neutral" text="kies functie" count="" design="Vertical" showAll="false"
-						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
-						<content>
-							<form:Form width="100%" editable="true" visible="true">
-								<form:title>
-									<core:Title text="functie" level="Auto"/>
-								</form:title>
-								<form:formContainers>
-									<form:FormContainer visible="true">
-										<form:formElements>
-											<form:FormElement visible="true">
-												<form:label>
-													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-												</form:label>
-												<form:fields>
-													<Input value="Employee" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
-												</form:fields>
-											</form:FormElement>
-										</form:formElements>
-										<form:title/>
-									</form:FormContainer>
-								</form:formContainers>
-								<form:layout>
-									<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
-								</form:layout>
-							</form:Form>
-						</content>
-					</IconTabFilter>
-					<IconTabSeparator icon="" iconDensityAware="false"/>
-				</items>
-				<content>
-					<Text text="Tab Bar Content goes here ..." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"
-						visible="true"/>
-				</content>
-			</IconTabBar>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title>
+					<core:Title text="Form Title" level="Auto"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="voornaam" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="achternaam" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="geslacht" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<RadioButtonGroup
+										id="sap_m_Dialog_1-content-build_simple_form_Form-1544920360749-formContainers-build_simple_form_FormContainer-1544920388429-formElements-build_simple_form_FormElement-3-fields-sap_m_RadioButtonGroup-1"
+										columns="8" selectedIndex="0" valueState="None" width="auto" editable="true" enabled="true" textDirection="Inherit"
+										select="_onRadioButtonGroupSelect">
+										<buttons>
+											<RadioButton text="man" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+											<RadioButton text="vrouw" editable="true" enabled="true" visible="true" width="auto" valueState="None" selected="false"/>
+										</buttons>
+									</RadioButtonGroup>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="email" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="datum in dienst treding" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<DatePicker width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="geboortedatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<DatePicker width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="active" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Switch state="false" customTextOff="Off" customTextOn="On" type="Default" enabled="true" visible="true"/>
+									<Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
 		</content>
 		<beginButton/>
 		<buttons>

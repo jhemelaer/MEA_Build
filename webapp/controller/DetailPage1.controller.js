@@ -86,29 +86,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oDialog.open();
 
 		},
-		_onObjectAttributePress2: function () {
+		_onStandardListItemPress: function (oEvent) {
 
-			var sDialogName = "Dialog3";
-			this.mDialogs = this.mDialogs || {};
-			var oDialog = this.mDialogs[sDialogName];
-
-			if (!oDialog) {
-				oDialog = new Dialog3(this.getView());
-				this.mDialogs[sDialogName] = oDialog;
-
-				// For navigation.
-				oDialog.setRouter(this.oRouter);
-			}
-			oDialog.open();
-
-		},
-		_onObjectListItemPress: function (oEvent) {
-
-			var oBindingContext = oEvent.getSource().getBindingContext();
+			var oBindingContext = oEvent.getParameter("listItem").getBindingContext();
 
 			return new Promise(function (fnResolve) {
-
-				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
+				this.doNavigate("DetailPage2", oBindingContext, fnResolve, "");
 			}.bind(this)).catch(function (err) {
 				if (err !== undefined) {
 					MessageBox.error(err.message);
@@ -171,12 +154,27 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
-		_onObjectListItemPress1: function (oEvent) {
+		_onObjectAttributePress2: function () {
 
-			var oBindingContext = oEvent.getSource().getBindingContext();
+			var sDialogName = "Dialog3";
+			this.mDialogs = this.mDialogs || {};
+			var oDialog = this.mDialogs[sDialogName];
+
+			if (!oDialog) {
+				oDialog = new Dialog3(this.getView());
+				this.mDialogs[sDialogName] = oDialog;
+
+				// For navigation.
+				oDialog.setRouter(this.oRouter);
+			}
+			oDialog.open();
+
+		},
+		_onTableItemPress: function (oEvent) {
+
+			var oBindingContext = oEvent.getParameter("listItem").getBindingContext();
 
 			return new Promise(function (fnResolve) {
-
 				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
 			}.bind(this)).catch(function (err) {
 				if (err !== undefined) {

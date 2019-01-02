@@ -12,15 +12,7 @@
 		},
 		"ach": "ach",
 		"resources": "resources.json",
-		"dataSources": {
-			"Flexso": {
-				"uri": "/destinations/Flexso/sap/opu/odata/SAP/YXM_MVJ_ODATA_FLEXSO_SRV/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0"
-				}
-			}
-		},
+		"dataSources": {},
 		"sourceTemplate": {
 			"id": "sap.ui.ui5-template-plugin.2masterdetail",
 			"version": "1.32.5"
@@ -72,10 +64,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"uri": "i18n/i18n.properties"
-			},
-		"" : {
-			"dataSource": "Flexso"
-		}
+			}
 		},
 		"routing": {
 			"config": {
@@ -98,35 +87,35 @@
 					"controlAggregation": "masterPages",
 					"viewName": "MasterPage1",
 					"viewId": "MasterPage1",
-					"viewLevel": 1,
+					"viewLevel": 4,
 					"transition": "slide"
 				},
 				"DetailPage1": {
 					"controlAggregation": "detailPages",
 					"viewName": "DetailPage1",
 					"viewId": "DetailPage1",
-					"viewLevel": 3,
+					"viewLevel": 1,
 					"transition": "slide"
 				},
 				"DetailPage2": {
 					"controlAggregation": "detailPages",
 					"viewName": "DetailPage2",
 					"viewId": "DetailPage2",
-					"viewLevel": 1,
+					"viewLevel": 3,
 					"transition": "slide"
 				},
 				"DetailPage3": {
 					"controlAggregation": "detailPages",
 					"viewName": "DetailPage3",
 					"viewId": "DetailPage3",
-					"viewLevel": 4,
+					"viewLevel": 2,
 					"transition": "slide"
 				},
 				"DetailPage4": {
 					"controlAggregation": "detailPages",
 					"viewName": "DetailPage4",
 					"viewId": "DetailPage4",
-					"viewLevel": 2,
+					"viewLevel": 5,
 					"transition": "slide"
 				}
 			},
