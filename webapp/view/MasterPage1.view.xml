@@ -1,6 +1,12 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.mRv4.controller.MasterPage1" xmlns="sap.m" xmlns:f="sap.f">
 	<Page title="Projecten" showHeader="true" showFooter="true" showNavButton="false">
 		<content>
+			
+			
+			<Button press="naarNederlands" text="Nederlands"></Button>
+			<Button press="naarEngles" text="English"></Button>
+			
+			
 			<List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
 				growingThreshold="20" growingScrollToLoad="true" visible="true">
 				<infoToolbar/>

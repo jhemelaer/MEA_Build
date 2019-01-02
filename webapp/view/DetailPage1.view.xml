@@ -5,7 +5,7 @@
 			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
 				selectedKey="Ok">
 				<items>
-					<IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="informatie" count="" design="Vertical" showAll="false"
+					<IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="{i18n>informatie}" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<ObjectHeader intro="" title="Project 1" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
@@ -114,31 +114,27 @@
 								<statuses/>
 								<markers/>
 							</ObjectHeader>
-							<List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
-								growingThreshold="20" growingScrollToLoad="true" visible="true">
-								<infoToolbar>
-									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
-										<content>
-											<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-										</content>
-									</Toolbar>
-								</infoToolbar>
-								<headerToolbar>
-									<Toolbar enabled="true" visible="true" width="" design="Solid">
-										<content>
-											<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
-										</content>
-									</Toolbar>
-								</headerToolbar>
-								<items>
-									<StandardListItem icon="sap-icon://employee-lookup" title="lid" description="" info="" infoState="None" type="Navigation" selected="false"
-										visible="true"/>
-									<StandardListItem icon="sap-icon://employee-lookup" title="lid" description="" info="" infoState="Success" type="Navigation"
-										selected="false" visible="true"/>
-									<StandardListItem icon="sap-icon://employee-lookup" title="lid" description="" info="" infoState="Error" type="Navigation" selected="false"
-										visible="true"/>
-								</items>
-							</List>
+								<List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true" selectionChange="_onStandardListSelectionChange">
+	                                <infoToolbar>
+	                                    <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+	                                        <content>
+	                                            <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+	                                        </content>
+	                                    </Toolbar>
+	                                </infoToolbar>
+	                                <headerToolbar>
+	                                    <Toolbar enabled="true" visible="true" width="" design="Solid">
+	                                        <content>
+	                                            <SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+	                                        </content>
+	                                    </Toolbar>
+	                                </headerToolbar>
+	                                <items>
+	                                    <StandardListItem icon="sap-icon://employee-lookup" title="lid" description="" info="" infoState="None" type="Navigation" selected="false" visible="true"/>
+	                                    <StandardListItem icon="sap-icon://employee-lookup" title="lid" description="" info="" infoState="Success" type="Navigation" selected="false" visible="true"/>
+	                                    <StandardListItem icon="sap-icon://employee-lookup" title="lid" description="" info="" infoState="Error" type="Navigation" selected="false" visible="true"/>
+	                                </items>
+                            	</List>
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
@@ -157,7 +153,7 @@
 						
 						
 						
-						<Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+						<Table width="auto" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" itemPress="_onTableItemPress">
                                 <infoToolbar>
                                     <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
                                         <content>
@@ -210,7 +206,7 @@
                                     </Column>
                                 </columns>
                                 <items>
-                                    <ColumnListItem type="Active" press="_onRowPress">
+                                    <ColumnListItem type="Active">
                                         <cells>
                                             <Text text="1" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                             <Text text="tabellen maken" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
@@ -219,7 +215,7 @@
                                             <Text text="open" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem type="Active" press="_onRowPress1">
+                                    <ColumnListItem type="Active">
                                         <cells>
                                             <Text text="2" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                             <Text text="data exporteren" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
@@ -228,7 +224,7 @@
                                             <Text text="open" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </cells>
                                     </ColumnListItem>
-                                    <ColumnListItem type="Active" press="_onRowPress2">
+                                    <ColumnListItem type="Active">
                                         <cells>
                                             <Text text="3" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                             <Text text="i18n aanmaken" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>

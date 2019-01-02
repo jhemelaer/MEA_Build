@@ -339,6 +339,21 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
+		
+		
+		_onTableItemPress: function(oEvent) {
+
+			var oBindingContext = oEvent.getParameter("listItem").getBindingContext();
+
+			return new Promise(function(fnResolve) {
+				this.doNavigate("DetailPage3", oBindingContext, fnResolve, "");
+			}.bind(this)).catch(function(err) {
+				if (err !== undefined) {
+					MessageBox.error(err.message);
+				}
+			});
+
+		}, 
 		onAfterRendering: function() {
 
 			var oChart,
@@ -349,6 +364,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oChart = oView.byId("sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946");
 			oChart.bindData(oBindingParameters['sap_IconTabBar_Page_0-content-sap_chart_BarChart-1544917068946']);
 
+		},
+		
+		_onStandardListSelectionChange : function () {
+				console.log("hello");
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("DetailPage2");
+			
 		}
 	});
 }, /* bExport= */ true);
