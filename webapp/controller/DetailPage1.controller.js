@@ -369,7 +369,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		_onStandardListSelectionChange : function () {
 				console.log("hello");
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-				oRouter.navTo("DetailPage3");
+				oRouter.navTo("DetailPage2");
 			
 		}
 	});

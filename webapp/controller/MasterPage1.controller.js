@@ -6,6 +6,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.mRv4.controller.MasterPage1", {
+		
 		handleRouteMatched: function (oEvent) {
 			var sAppId = "App5c0fc78059fdbb598f2a39fd";
 
@@ -203,6 +204,17 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("MasterPage1").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 
-		}
+		},
+		
+		
+		
+		
+		 naarNederlands: function () {
+		 	sap.ui.getCore().getConfiguration().setLanguage( "ne" );
+		 },
+		 
+		 naarEngles: function () {
+		 	sap.ui.getCore().getConfiguration().setLanguage( "de" );
+		 },
 	});
 }, /* bExport= */ true);

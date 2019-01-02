@@ -5,7 +5,7 @@
 			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
 				selectedKey="Ok">
 				<items>
-					<IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="informatie" count="" design="Vertical" showAll="false"
+					<IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="{i18n>informatie}" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<ObjectHeader intro="" title="Project 1" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
