@@ -23,7 +23,7 @@
 										<form:formElements>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="id" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>idProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
@@ -31,7 +31,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="titel" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>titelProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
@@ -39,7 +39,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="omschrijving" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>omschrijvingProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" visible="true"/>
@@ -47,7 +47,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="beginDatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>beginDatumProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<DatePicker width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
@@ -55,7 +55,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="eindDatum" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>eindDatumProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<DatePicker width="auto" displayFormat="medium" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
@@ -63,7 +63,7 @@
 											</form:FormElement>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="Active" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="{i18n>ActiveProjectDetail}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<Switch state="false" customTextOff="Off" customTextOn="On" type="Default" enabled="true" visible="true"/>
@@ -102,14 +102,14 @@
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://employee" iconColor="Neutral" text="leden" count="" design="Vertical" showAll="false"
+					<IconTabFilter icon="sap-icon://employee" iconColor="Neutral" text="{i18n>leden}" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<ObjectHeader intro="" title="Leden" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
+							<ObjectHeader intro="" title="{i18n>ledenTitle}" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
 								condensed="false" visible="true">
 								<attributes>
-									<ObjectAttribute text="Add lid" active="true" visible="true" press="_onObjectAttributePress"/>
-									<ObjectAttribute text="Add existing lid" active="true" visible="true" press="_onObjectAttributePress1"/>
+									<ObjectAttribute text="{i18n>nieuwlidToevoegen}" active="true" visible="true" press="_onObjectAttributePress"/>
+									<ObjectAttribute text="{i18n>existinglidToevoegen}" active="true" visible="true" press="_onObjectAttributePress1"/>
 								</attributes>
 								<statuses/>
 								<markers/>
@@ -138,13 +138,13 @@
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://task" iconColor="Neutral" text="task" count="" design="Vertical" showAll="false" textDirection="Inherit"
+					<IconTabFilter icon="sap-icon://task" iconColor="Neutral" text="{i18n>taak}" count="" design="Vertical" showAll="false" textDirection="Inherit"
 						enabled="true" visible="true" iconDensityAware="false">
 						<content>
-							<ObjectHeader intro="" title="Tasks" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
+							<ObjectHeader intro="" title="{i18n>takenTitle}" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"
 								condensed="false" visible="true">
 								<attributes>
-									<ObjectAttribute text="Add task" active="true" visible="true" press="_onObjectAttributePress2"/>
+									<ObjectAttribute text="{i18n>nieuwlidToevoegen}" active="true" visible="true" press="_onObjectAttributePress2"/>
 								</attributes>
 								<statuses/>
 								<markers/>
@@ -176,31 +176,31 @@
                                 <columns>
                                     <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
                                         <header>
-                                            <Text text="id" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{i18n>tableId}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </header>
                                         <footer/>
                                     </Column>
                                     <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
                                         <header>
-                                            <Text text="name" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{i18n>tablenaamTaak}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </header>
                                         <footer/>
                                     </Column>
                                     <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
                                         <header>
-                                            <Text text="deadline" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{i18n>tabledeadlineTaak}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </header>
                                         <footer/>
                                     </Column>
                                     <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
                                         <header>
-                                            <Text text="responsible" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{i18n>tabletaakVerantwoordelijke}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </header>
                                         <footer/>
                                     </Column>
                                     <Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
                                         <header>
-                                            <Text text="status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{i18n>tabletaakStatus}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
                                         </header>
                                         <footer/>
                                     </Column>
@@ -243,7 +243,7 @@
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter icon="sap-icon://vertical-bar-chart" iconColor="Neutral" text="statics" count="" design="Vertical" showAll="false"
+					<IconTabFilter icon="sap-icon://vertical-bar-chart" iconColor="Neutral" text="statistieken" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<ObjectHeader intro="" title="Statics" number="" numberUnit="USD" numberState="None" titleActive="false" backgroundDesign="Translucent"

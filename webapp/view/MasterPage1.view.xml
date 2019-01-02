@@ -4,7 +4,7 @@
 			
 			
 			<Button press="naarNederlands" text="Nederlands"></Button>
-			<Button press="naarEngles" text="English"></Button>
+			<Button press="naarEngles" text="Duits"></Button>
 			
 			
 			<List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
